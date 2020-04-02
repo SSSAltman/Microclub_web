@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        table{float: left;background: #a94442}
+        td{border:1px solid #ffff00;color: black }
+    </style>
+    <title>js_output</title>
+</head>
+<body>
+<script type="text/javascript">
+    document.write("<table>");
+    for (var i=0;i<9;i++){
+        document.write("<tr>")
+        for (var j=0;j<i;j++){
+            document.write("<td>")
+            document.write(j+"*"+i+"="+j*i)
+            document.write("</td>")
+        }
+        document.write("</tr>")
+    }
+    document.write("</table>");
+</script>
+</body>
+</html>
