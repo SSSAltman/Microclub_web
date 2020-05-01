@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js object</title>
+    <style type="text/css">
+        .aa{
+            color: red;
+            font-size: 50px;
+        }
+        .bb{
+            color: blue;
+            font-size: 50px;
+        }
+        .m{
+        background-color:rgb(122,197,205);
+        }
+        .n{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+<h1>
+    定义对象
+</h1>
+<p>
+    var transportation={<br>
+    brand:"",<br>
+    color:"",<br>
+    speed:0,<br>
+    run:function () {<br>
+    alert(this.brand+" 's speed is "+this.speed)<br>
+    }<br>
+    };<br>
+</p>
+
+<h1>
+    构造函数,定义属性
+</h1>
+<p>
+    function Transportation(brand,color,speed) {<br>
+    console.log(count);<br>
+    count=count+1;<br>
+    if(count>=11){<br>
+    document.write("<a class=''>")<br>
+    document.write("已经创建超过十一个对象")<br>
+    document.write("</a>")<br>
+    }<br>
+    else{<br>
+    var x=transportation;<br>
+    x.brand=brand;<br>
+    x.color=color;x<br>
+    x.speed=0;<br>
+    Object.defineProperty(x,'brand',{configurable:false});<br>
+    return x;<br>
+    }<br>
+    }<br>
+</p>
+    <center>
+    <button onclick="myFunction()">创建一个对象</button>
+    </center>
+    <div class="m" id="demo">
+        COUNT
+    </div>
+</div>
+<script>
+
+    var transportation={
+        brand:"",
+        color:"",
+        speed:0,
+        run:function () {
+            document.write("<a class='aa'>")
+            document.write("brand:"+this.brand+" "+"color:"+this.color+" "+"speed:"+this.speed)
+            document.write("</a>")
+        }
+    };
+    Object.defineProperty(transportation,'brand',{configurable:false});
+
+    var count=0;
+    function Transportation(brand,color,speed) {
+        count=count+1;
+        if(count>=11){
+            document.write("<a class='bb'>")
+            document.write("已经创建超过十一个对象")
+            document.write("</a>")
+        }
+        else{
+        var x=transportation;
+        x.brand=brand;
+        x.color=color;x
+        x.speed=0;
+        Object.defineProperty(x,'brand',{configurable:false});
+        return x;
+        }
+    }
+    var s=Transportation("benz","black",55)
+    s.run();
+    function myFunction(){
+        var a=Transportation("OOOO","black",45)
+        document.getElementById("demo").innerHTML=count;
+    }
+
+
+</script>
+</body>
+</html>
